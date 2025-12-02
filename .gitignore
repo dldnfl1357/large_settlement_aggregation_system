@@ -1,0 +1,45 @@
+### Gradle ###
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+
+### IDE ###
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+.project
+.classpath
+.settings/
+bin/
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Logs ###
+logs/
+*.log
+gc.log
+heapdump.hprof
+
+### Application ###
+*.jar
+*.war
+!gradle/wrapper/*.jar
+
+### Environment ###
+.env
+.env.local
+*.local
+
+### Docker ###
+docker/mysql/data/
+
+### Generated ###
+src/main/generated/
+src/main/java/**/Q*.java

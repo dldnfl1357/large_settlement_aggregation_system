@@ -1,0 +1,35 @@
+spring:
+  # DataSource 설정 (운영)
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:settlement}?useSSL=true&serverTimezone=Asia/Seoul&rewriteBatchedStatements=true
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 20
+      maximum-pool-size: 100
+      idle-timeout: 30000
+      pool-name: SettlementHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+  # JPA 설정 (운영)
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        generate_statistics: false
+
+# p6spy 비활성화 (운영)
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: false
+
+# 로깅 설정 (운영)
+logging:
+  level:
+    root: WARN
+    com.settlement: INFO
+    org.hibernate.SQL: WARN
+    org.springframework.batch: INFO

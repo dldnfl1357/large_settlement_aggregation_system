@@ -1,8 +1,12 @@
+### Claude ###
+.claude*
+
 ### Gradle ###
 .gradle/
 build/
 out/
 !gradle/wrapper/gradle-wrapper.jar
+gradlew
 
 ### IDE ###
 .idea/

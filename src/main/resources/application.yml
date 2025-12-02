@@ -1,7 +1,6 @@
 spring:
   profiles:
     active: dev
-
   application:
     name: settlement-batch
 
@@ -12,9 +11,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        default_batch_fetch_size: 100
+        # 4GB 메모리 환경 최적화: 청크 단위로 처리하므로 batch size 증가
+        default_batch_fetch_size: 500
         jdbc:
-          batch_size: 100
+          batch_size: 500
           order_inserts: true
           order_updates: true
     open-in-view: false

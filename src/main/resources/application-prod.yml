@@ -6,8 +6,9 @@ spring:
     password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
-      minimum-idle: 20
-      maximum-pool-size: 100
+      # 4GB 전용 인스턴스: 커넥션 풀 여유있게 설정
+      minimum-idle: 10
+      maximum-pool-size: 30
       idle-timeout: 30000
       pool-name: SettlementHikariCP
       max-lifetime: 1800000

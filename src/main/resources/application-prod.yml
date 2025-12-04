@@ -27,6 +27,12 @@ decorator:
     p6spy:
       enable-logging: false
 
+# 정산 스케줄러 설정 (운영 - 활성화)
+settlement:
+  scheduler:
+    enabled: true
+    cron: "0 0 3 * * *"  # 매일 새벽 3시
+
 # 로깅 설정 (운영)
 logging:
   level:

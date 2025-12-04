@@ -70,4 +70,19 @@ public class Settlement {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
+
+    /**
+     * 정산 데이터 업데이트 (재정산 시 사용)
+     */
+    public void update(BigDecimal totalSales, BigDecimal commissionRate,
+                       Integer orderCount, Integer itemCount) {
+        this.totalSales = totalSales;
+        this.commissionRate = commissionRate;
+        this.commission = totalSales.multiply(commissionRate);
+        this.netAmount = totalSales.subtract(this.commission);
+        this.orderCount = orderCount;
+        this.itemCount = itemCount;
+        this.status = SettlementStatus.PENDING;
+        this.updatedAt = LocalDateTime.now();
+    }
 }

@@ -42,6 +42,12 @@ management:
     health:
       show-details: always
 
+# 정산 스케줄러 설정
+settlement:
+  scheduler:
+    enabled: false  # 스케줄러 활성화 여부 (운영 환경에서 true로 설정)
+    cron: "0 0 3 * * *"  # 매일 새벽 3시
+
 # 로깅 설정
 logging:
   level:
